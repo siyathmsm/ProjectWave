@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Top navigation bar -->
+    <LinearLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <!-- Bold heading -->
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group Leader Dashboard"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Profile picture and welcome message -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Profile picture -->
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/sss"
+                android:scaleType="centerCrop" />
+
+            <!-- Welcome message -->
+            <TextView
+                android:id="@+id/welcomeMessageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Welcome, Siyath MSM !"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="35dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Main content frame -->
+    <FrameLayout
+        android:id="@+id/contentFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavBar" />
+
+    <!-- Bottom navigation bar -->
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_blue_dark"
+        android:elevation="8dp"
+        android:padding="8dp">
+
+        <!-- Option 1 -->
+        <ImageView
+            android:id="@+id/navOption1"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:onClick="onOption1Clicked" />
+
+        <!-- Option 2 -->
+        <ImageView
+            android:id="@+id/navOption2"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_weight="1"
+            android:src="@drawable/chat"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:onClick="onOption2Clicked" />
+
+        <!-- Option 3 -->
+        <ImageView
+            android:id="@+id/navOption3"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_weight="1"
+            android:src="@drawable/noti"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:onClick="onOption3Clicked" />
+
+        <!-- Option 4 -->
+        <ImageView
+            android:id="@+id/navOption4"
+            android:layout_width="80px"
+            android:layout_height="80px"
+            android:layout_weight="1"
+            android:src="@drawable/profile"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:onClick="onOption4Clicked" />
+    </LinearLayout>
+
+    <!-- Body of the frame -->
+    <LinearLayout
+        android:id="@+id/bodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topNavBar"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Option 1 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:onClick="onOption1Clicked">
+
+                <ImageView
+                    android:id="@+id/addGroupLeadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/add_group"
+                    android:padding="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Group"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Option 2 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:onClick="onOption2Clicked">
+
+                <ImageView
+                    android:id="@+id/feedbackLeadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/feedback"
+                    android:padding="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feedbacks"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <!-- Option 3 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:onClick="onOption3Clicked">
+
+                <ImageView
+                    android:id="@+id/uploadLeadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/upload"
+                    android:padding="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upload Document"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Option 4 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:onClick="onOption4Clicked">
+
+                <ImageView
+                    android:id="@+id/downloadLeadImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/download"
+                    android:padding="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Download Document"
+                    android:gravity="center" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!-- Row 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <!-- Option 5 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:onClick="onOption3Clicked">
+
+                <ImageView
+                    android:id="@+id/updateDeleteImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/update"
+                    android:padding="50dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Update / Delete Group"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <!-- Option 6 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:onClick="onOption4Clicked">
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
